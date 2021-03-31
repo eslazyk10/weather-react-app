@@ -21,7 +21,7 @@ function App() {
         </div>
       </div>
       </header>
-      <p> <a href="https://github.com/eslazyk10/weather-react-app/tree/master/src">Open-sourced code</a><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20px" /> by Emily Slazyk </p>
+      <p> <a href="https://github.com/eslazyk10/weather-react-app/tree/master/src">Open-sourced code</a><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20px" alt="github"/> by Emily Slazyk </p>
     </div>
   );
 }
