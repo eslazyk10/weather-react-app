@@ -1,20 +1,30 @@
 .Search form {
   display: block;
-  position: static;
   margin: 0 auto;
-  text-align: center;
+  margin-left: 110px;
   margin-bottom: 20px;
-  margin-right: 335px;
-  max-width: 120px;
+
 }
+
+#Search-form{
+  border-radius: 6px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 35px;
+}
+
+
 
 #Search-Btn, #Location-Btn {
   background-color: #153260;
   color: white;
-  padding: 5px;
-  border: 2px solid #D5D6DC;
+  padding: 3px;
+  border: 1px solid black;
   border-radius: 6px;
-  margin-top: 10px;
+}
+
+#Location-Btn{
+  margin-left: 20px;
 }
 
 

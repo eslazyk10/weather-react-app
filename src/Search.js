@@ -7,15 +7,13 @@ export default function Search() {
     <div className="Search">
       <form>
         <div className="row">
-          <div className="col-12">
-            <input id="Search-form" type="text" />
+          <div className="col-5">
+            <input id="Search-form" type="search" placeholder="Search a city" />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-6">
+        
+          <div className="col-7">
             <input id="Search-Btn" type="submit" value="Search" />
-          </div>
-          <div className="col-6">
+          
             <input id="Location-Btn" type="submit" value="Current Location" />
           </div>
         </div>
