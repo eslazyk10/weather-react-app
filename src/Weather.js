@@ -6,7 +6,6 @@ import "./Weather.css";
 export default function Weather(props) {
   let [city, setCity]= useState("");
   let [weatherData, setWeatherData] = useState({});
-  let iconUrl ="https://d29fhpw069ctt2.cloudfront.net/icon/image/49043/preview.svg";
   
   const apiKey = "5b8bfd096caf5847f3506db76bfb75ad";
   const unit= "imperial";
@@ -31,6 +30,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       windSpeed: Math.round(response.data.wind.speed),
       currentCity: response.data.name,
+      iconUrl: "https://d29fhpw069ctt2.cloudfront.net/icon/image/49043/preview.svg"
     })
   }
 
@@ -47,7 +47,7 @@ export default function Weather(props) {
     <div className="col-6">
        <h3>
         <img
-          src={iconUrl}
+          src={weatherData.iconUrl}
           alt={weatherData.description}
         />
         {" "}{weatherData.temperature}° <a href="/">F</a>|<a href="/">C</a>
