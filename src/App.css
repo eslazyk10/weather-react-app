@@ -1,11 +1,11 @@
 .Container {
-  font-family: sans-serif;
+  display: block;
+  margin: 0 auto;
   max-width: 720px;
   max-height: 600px;
   border: 3px solid black;
   border-radius: 10px;
-  display: block;
-  margin: 0 auto;
+  font-family: sans-serif;
   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 }
 
@@ -28,7 +28,5 @@
 }
 
 .Footer {
-  display: block;
-  margin: 0 auto;
   text-align: center;
 }
