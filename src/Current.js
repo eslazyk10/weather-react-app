@@ -10,7 +10,7 @@ export default function Current(props) {
           src="https://d29fhpw069ctt2.cloudfront.net/icon/image/49043/preview.svg"
           alt="Sunny"
         />
-        {props.temp}° <a href="/">F</a>|<a href="/">C</a>
+        {" "}{props.temp}° <a href="/">F</a>|<a href="/">C</a>
       </h3>
       <ul>
         <li>Feels like: {props.value}°</li>
