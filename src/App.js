@@ -7,7 +7,7 @@ import Current from "./Current";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="Container">
         <Search />
       <h1 className="Current-City">Nashville</h1>
       <div className="row">
@@ -20,8 +20,8 @@ function App() {
           <Current value={72} humidity={45} speed={8} />
         </div>
       </div>
-      </header>
-      <p> <a href="https://github.com/eslazyk10/weather-react-app/tree/master/src">Open-sourced code</a><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20px" alt="github"/> by Emily Slazyk </p>
+      </div>
+      <footer className="Footer"> <a href="https://github.com/eslazyk10/weather-react-app/tree/master/src" target="blank">Open-sourced code</a><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20px" alt="github"/> by Emily Slazyk </footer>
     </div>
   );
 }
