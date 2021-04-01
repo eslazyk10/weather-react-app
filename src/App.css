@@ -9,34 +9,12 @@
   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 }
 
-.Search form {
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  max-width: 250px;
-}
-
-#Search-Btn {
-  background-color: #153260;
-  color: white;
-  padding: 5px;
-  border-radius: 6px;
-  margin-top: 8px;
-}
-
-#Location-Btn {
-  background-color: #153260;
-  color: white;
-  padding: 5px;
-  border-radius: 8px;
-  margin-top: 8px;
-}
-
 .App h1 {
   color: #153260;
   font: weight 800;
   font-size: 48px;
+  font-weight: 600;
+  margin-top: 40px;
   margin-bottom: 15px;
   margin-left: 20px;
   text-align: left;
@@ -47,29 +25,6 @@
   margin-bottom: 5px;
   margin-left: 20px;
   text-align: left;
-}
-
-.Temperature h2 {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 30px;
-  font-weight: 600;
-  color: #153260;
-}
-
-.Temperature img {
-  max-width: 60px;
-}
-
-.Temperature a {
-  text-decoration: none;
-  color: #153260;
-}
-
-.Current ul {
-  list-style: none;
-  text-align: right;
-  margin-right: 25px;
 }
 
 .Footer {
