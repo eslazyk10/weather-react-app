@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
+import FormattedDate from "./FormattedDate";
 
 import "./Weather.css";
 
@@ -32,7 +33,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       windSpeed: Math.round(response.data.wind.speed),
       currentCity: response.data.name,
-      date: "Thursday 12:00",
+      date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
       iconUrl: `http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`,
       description: response.data.weather[0].description
@@ -45,7 +46,9 @@ export default function Weather(props) {
     <div className="row">
         <div className="col-6">
       <h1 className="Current-City">{weatherData.currentCity}</h1>
-          <h2 className="Current-Day-Time">{weatherData.date}</h2>
+          <h2 className="Current-Day-Time">
+            <FormattedDate date={weatherData.date}/>
+          </h2>
           <h2 className="text-capitalize">{weatherData.description}</h2>
           
         </div>
@@ -66,7 +69,7 @@ export default function Weather(props) {
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-5">
-            <input id="Search-form" type="search" placeholder="Search a city" autoFocus="off" onChange={changeCity} />
+            <input id="Search-form" type="search" placeholder="Search a city" autofill="off" onChange={changeCity} />
           </div>
         
           <div className="col-7">
