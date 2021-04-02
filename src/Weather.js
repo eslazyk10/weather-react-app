@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 import "./Weather.css";
+
 
 export default function Weather(props) {
   let [city, setCity]= useState("");
@@ -43,43 +44,23 @@ export default function Weather(props) {
   if (weatherData.ready){
   return (
     <div className="Weather">
-    <div className="row">
-        <div className="col-6">
-      <h1 className="Current-City">{weatherData.currentCity}</h1>
-          <h2 className="Current-Day-Time">
-            <FormattedDate date={weatherData.date}/>
-          </h2>
-          <h2 className="text-capitalize">{weatherData.description}</h2>
-          
-        </div>
-    <div className="col-6">
-       <h3>
-        <img
-          src={weatherData.iconUrl}
-          alt={""}
-        />
-        {" "}{weatherData.temperature}° <a href="/">F</a>|<a href="/">C</a>
-      </h3>
-      <ul>
-        <li>Feels like: {weatherData.feel}°</li>
-        <li>Humidity: {weatherData.humidity}%</li>
-        <li>Wind Speed: {weatherData.windSpeed} mph</li>
-      </ul>
-    </div>
+      <WeatherInfo data={weatherData} />
+      
       <form onSubmit={handleSubmit}>
         <div className="row">
-          <div className="col-5">
-            <input id="Search-form" type="search" placeholder="Search a city" autofill="off" onChange={changeCity} />
+          <div className="col-4">
+          
+            <input id="Search-form" type="search" placeholder="Search a city..." autofill="off" onChange={changeCity} />
           </div>
         
-          <div className="col-7">
+          <div className="col-8">
             <input id="Search-Btn" type="submit" value="Search" />
 
             <input id="Location-Btn" type="submit" value="Current Location" />
+            </div>
           </div>
-        </div>
+        
       </form>
-    </div>
     </div>
   );
   }else {
@@ -95,8 +76,8 @@ export default function Weather(props) {
     <Loader
         type="Puff"
         color="#153260"
-        height={300}
-        width={300}
+        height={200}
+        width={200}
         
       />
       </div>
