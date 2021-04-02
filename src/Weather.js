@@ -36,7 +36,6 @@ export default function Weather(props) {
       currentCity: response.data.name,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
-      iconUrl: `http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`,
       description: response.data.weather[0].description
     })
   }
@@ -75,9 +74,9 @@ export default function Weather(props) {
       <h1>"Loading.."</h1>
     <Loader
         type="Puff"
-        color="#153260"
-        height={200}
-        width={200}
+        color="rgba(21, 50, 96, 0.7)"
+        height={150}
+        width={150}
         
       />
       </div>

@@ -4,14 +4,14 @@
   margin-bottom: 20px;
   margin-top: 25px;
   text-align: center;
+  max-width: 500px;
 }
 
 #Search-form{
   border-radius: 6px;
-  margin-left: 130px;
+  
   padding: 5px;
   padding-left: 10px;
-  padding-right: 15px;
 }
 
 #Search-Btn, #Location-Btn {
@@ -20,7 +20,7 @@
   padding: 5px;
   border: 1px solid black;
   border-radius: 6px;
-  margin-right: 15px;
+  margin-right: 14px;
 }
 
 .Loader{
