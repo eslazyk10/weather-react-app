@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
+import Forecast from "./Forecast";
 
 import "./Weather.css";
-
 
 export default function Weather(props) {
   let [city, setCity]= useState("");
@@ -13,6 +13,7 @@ export default function Weather(props) {
   const apiKey = "5b8bfd096caf5847f3506db76bfb75ad";
   const unit= "imperial";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  
 
   function handleSubmit(event){
     event.preventDefault();
@@ -20,15 +21,18 @@ export default function Weather(props) {
   }
 
   function changeCity(event){
-    event.preventDefault();
     setCity(event.target.value);
   }
+
   
   function handleResponse(response){
     console.log(response.data);
     
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
+      longitude: response.data.coord.lon,
+      latitude: response.data.coord.lat,
       temperature: Math.round(response.data.main.temp),
       feel: Math.round(response.data.main.feels_like),
       humidity: response.data.main.humidity,
@@ -40,6 +44,13 @@ export default function Weather(props) {
     })
   }
 
+  function handleLocation(event){
+    event.preventDefault();
+    let locationUrl = "https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid=5b8bfd096caf5847f3506db76bfb75ad&units=imperial";
+    axios.get(locationUrl).then(changeCity);
+  }
+  
+
   if (weatherData.ready){
   return (
     <div className="Weather">
@@ -49,17 +60,18 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-4">
           
-            <input id="Search-form" type="search" placeholder="Search a city..." autofill="off" onChange={changeCity} />
+            <input id="Search-form" type="search" placeholder="Search a city..." onChange={changeCity} />
           </div>
         
           <div className="col-8">
             <input id="Search-Btn" type="submit" value="Search" />
 
-            <input id="Location-Btn" type="submit" value="Current Location" />
+            <input id="Location-Btn" type="submit" value="Current Location" onClick={handleLocation}/>
             </div>
           </div>
         
       </form>
+      <Forecast coordinates={weatherData.coordinates}/>
     </div>
   );
   }else {
