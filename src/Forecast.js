@@ -1,37 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import WeatherIcon from "./WeatherIcon";
-
+import Loader from "react-loader-spinner";
 import "./Forecast.css";
 import axios from "axios";
 
 export default function Forecast(props){
+    let [loaded, setLoaded] = useState(false);
+    let [forecast, setForecast] = useState(null);
     function handleResponse(response){
-        console.log(response.data);
+        setForecast(response.data.daily);
+        setLoaded(true);
     }
-
-    console.log(props);
     
-    let apiKey= "5b8bfd096caf5847f3506db76bfb75ad";
-    let unit= "imperial";
-    let latitude= props.coordinates.lat;
-    let longitude=props.coordinates.lon;
-    let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-   
-    axios.get(apiUrl).then(handleResponse);
-
-    return(
+    
+    if (loaded){
+        console.log(forecast)
+        return(
         <div className="Forecast">
             <div className="row">
                 <div className="col">
-                    <div className="Forecast-day">Thurs</div>
-                    <WeatherIcon code="01d" size={36} />
-                    <div className="Forecast-temps">
-                        <span className="Forecast-temp-max">55°</span>
-                        <span className="Forecast-temp-min">48°</span>
-                    </div>
+                    <ForecastDay />
                 </div>
             </div>
         </div>
-    )
+    );
+    } else{
+        
+    let apiKey= "5b8bfd096caf5847f3506db76bfb75ad";
+        let unit= "imperial";
+        let latitude= props.coordinates.lat;
+        let longitude=props.coordinates.lon;
+        let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+   
+        axios.get(apiUrl).then(handleResponse);
 
+        return (
+            <div>
+            <p>"Loading.."</p>
+            <Loader
+            type="ThreeDots"
+            color="rgba(21, 50, 96, 0.7)"
+            height={50}
+            width={50}
+            />
+            </div>
+        );
+    }
 }
