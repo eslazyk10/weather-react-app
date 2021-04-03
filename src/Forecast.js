@@ -48,7 +48,7 @@ export default function Forecast(props){
         axios.get(apiUrl).then(handleResponse);
 
         return (
-            <div>
+            <div className="Forecast-loader">
             <p>"Loading.."</p>
             <Loader
             type="ThreeDots"
