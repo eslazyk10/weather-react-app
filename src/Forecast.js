@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeatherIcon from "./WeatherIcon";
+import ForecastDay from "./ForecastDay";
 import Loader from "react-loader-spinner";
 import "./Forecast.css";
 import axios from "axios";
@@ -19,7 +19,7 @@ export default function Forecast(props){
         <div className="Forecast">
             <div className="row">
                 <div className="col">
-                    <ForecastDay />
+                    <ForecastDay data={forecast[0]}/>
                 </div>
             </div>
         </div>
