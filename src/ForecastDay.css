@@ -1,0 +1,31 @@
+
+.Daily-forecast{
+    background-color: aliceblue;
+    border: 3px solid #6D6C6B;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 8px;
+}
+
+
+.Forecast-day {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #153260;   
+}
+
+.Forecast-temps{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.Forecast-temp-max{
+    font-weight: bold;
+}
+
+.Forecast-temp-min{
+    margin-left: 5px;
+    opacity: 0.7;
+}

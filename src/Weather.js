@@ -26,7 +26,6 @@ export default function Weather(props) {
 
   
   function handleResponse(response){
-    console.log(response.data);
     
     setWeatherData({
       ready: true,
@@ -44,13 +43,6 @@ export default function Weather(props) {
     })
   }
 
-  function handleLocation(event){
-    event.preventDefault();
-    let locationUrl = "https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid=5b8bfd096caf5847f3506db76bfb75ad&units=imperial";
-    axios.get(locationUrl).then(changeCity);
-  }
-  
-
   if (weatherData.ready){
   return (
     <div className="Weather">
@@ -58,15 +50,13 @@ export default function Weather(props) {
       
       <form onSubmit={handleSubmit}>
         <div className="row">
-          <div className="col-4">
+          <div className="col-9">
           
             <input id="Search-form" type="search" placeholder="Search a city..." onChange={changeCity} />
           </div>
         
-          <div className="col-8">
+          <div className="col-3">
             <input id="Search-Btn" type="submit" value="Search" />
-
-            <input id="Location-Btn" type="submit" value="Current Location" onClick={handleLocation}/>
             </div>
           </div>
         
