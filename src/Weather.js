@@ -62,7 +62,7 @@ export default function Weather(props) {
         
       </form>
       <Forecast coordinates={weatherData.coordinates}/>
-      <p>Weather data provided by <a href="https://openweathermap.org/" title="OpenWeather" className="weatherLink" >OpenWeather</a></p>
+      <p>Weather data provided by <a href="https://openweathermap.org/" target="blank" title="OpenWeather" className="weatherLink" >OpenWeather</a></p>
     </div>
   );
   }else {
