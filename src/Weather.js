@@ -50,18 +50,19 @@ export default function Weather(props) {
       
       <form onSubmit={handleSubmit}>
         <div className="row">
-          <div className="col-9">
+          <div className="col-sm-9">
           
             <input id="Search-form" type="search" placeholder="Search a city..." onChange={changeCity} />
           </div>
         
-          <div className="col-3">
+          <div className="col-sm-3">
             <input id="Search-Btn" type="submit" value="Search" />
             </div>
           </div>
         
       </form>
       <Forecast coordinates={weatherData.coordinates}/>
+      <p>Weather data provided by <a href="https://openweathermap.org/" title="OpenWeather" className="weatherLink" >OpenWeather</a></p>
     </div>
   );
   }else {

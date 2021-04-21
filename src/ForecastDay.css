@@ -1,11 +1,18 @@
-
+@media (min-width:575px){
 .Daily-forecast{
     max-width: 720px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 8px;
 }
-
+}
+@media (max-width:575px){
+.Daily-forecast{
+    max-width: 720px;
+    padding: 8px;
+    border-bottom: 2px dashed #153260;
+}
+}
 
 .Forecast-day {
     font-weight: bold;
@@ -13,6 +20,7 @@
     margin-bottom: 5px;
     color: #153260;   
 }
+
 
 .Forecast-temps{
     margin-top: 5px;
